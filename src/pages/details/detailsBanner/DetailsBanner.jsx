@@ -8,7 +8,7 @@ import Img from "../../../components/lazyLoadImage/Img";
 import PosterFallback from "./../../../assets/no-poster.png";
 import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
-import PlayBtn from "./Playbtn";
+import PlayBtn from "./PlayBtn";
 import dayjs from "dayjs";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 
@@ -70,7 +70,7 @@ function DetailsBanner({ video, crew }) {
                         className="playbtn"
                         onClick={() => {
                           setShow(true);
-                          setVideoId(video.key );
+                          setVideoId(video.key);
                         }}
                       >
                         <PlayBtn />
