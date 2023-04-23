@@ -1,9 +1,9 @@
- import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./HeroBanner.scss";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { useSelector } from "react-redux";
-import Img from "../../components/lazyLoadImage/img";
+import Img from "../../components/lazyLoadImage/Img";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 
 function HeroBanner() {
@@ -26,9 +26,11 @@ function HeroBanner() {
   }, [data]);
   return (
     <div className="heroBanner">
-      {!loading && <div className="backdrop-img">
-      <Img src={background}/>
-      </div>}
+      {!loading && (
+        <div className="backdrop-img">
+          <Img src={background} />
+        </div>
+      )}
       <div className="opacity-layer"></div>
       <ContentWrapper>
         <div className="heroBannerContent">
@@ -43,13 +45,13 @@ function HeroBanner() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyUp={searchHandler}
-              />
+            />
             <button onClick={() => navigate(`/search/${search}`)}>
               Search
             </button>
           </div>
         </div>
-              </ContentWrapper>
+      </ContentWrapper>
     </div>
   );
 }
